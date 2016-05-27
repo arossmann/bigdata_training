@@ -24,21 +24,12 @@ create external table hvac_raw (
  row format delimited fields terminated by ',' location '/user/<username>/building';
 
  -- create the optimized table for HVAC data
- CREATE TABLE hvac STORED AS PARQUET AS SELECT * FROM hvac_raw;
+CREATE TABLE hvac STORED AS PARQUET AS SELECT * FROM hvac_raw;
 
  -- create the optimized table for the building data
- CREATE TABLE buildings STORED AS PARQUET AS SELECT * FROM building_raw;
+CREATE TABLE buildings STORED AS PARQUET AS SELECT * FROM building_raw;
 
  -- create optimized views
- CREATE TABLE hvac_temperatures as 
-select *, targettemp - actualtemp as temp_diff, 
-IF((targettemp - actualtemp) > 5, 'COLD', 
-IF((targettemp - actualtemp) < -5, 'HOT', 'NORMAL')) 
-AS temprange, 
-IF((targettemp - actualtemp) > 5, '1', 
-IF((targettemp - actualtemp) < -5, '1', 0)) 
-AS extremetemp from hvac;
-
 CREATE TABLE hvac_temperatures as 
 select *, targettemp - actualtemp as temp_diff, 
 IF((targettemp - actualtemp) > 5, 'COLD', 
