@@ -1,3 +1,11 @@
+-- Create a list to display the airline, departing and arriving airport and the number of stops
+select airlines.name, a.name as source_name, b.name as dest_name, sum(stops) 
+from routes inner join airlines on airlines.airline_id = routes.airline_id
+inner join airports a on routes.source_airport_id = a.airport_id
+inner join airports b on routes.dest_airport_id = b.airport_id
+group by airlines.name, a.name, b.name
+
+
 -- Getting cities with more than 30 min. delay
 select 
 year,
