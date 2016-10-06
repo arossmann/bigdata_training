@@ -5,6 +5,22 @@ inner join airports a on routes.source_airport_id = a.airport_id
 inner join airports b on routes.dest_airport_id = b.airport_id
 group by airlines.name, a.name, b.name
 
+-- Create a list to display the airline, departing and arriving airport and the delayed minutes for 10/1998
+select
+year,
+month, 
+dest.country,
+dest.name,
+src.country,
+src.name, 
+ad.uniquecarrier,
+sum(arrdelay) as delayed_minutes
+from
+delays ad 
+inner join airports src on ad.origin = src.iata_code_airport
+inner join airports dest on ad.dest = dest.iata_code_airport
+where year=1998 and month=10
+group by year, month, dest.country,dest.name,src.country,src.name,ad.uniquecarrier;
 
 -- Getting cities with more than 30 min. delay
 select 
