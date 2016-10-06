@@ -13,14 +13,15 @@ dest.country,
 dest.name,
 src.country,
 src.name, 
-ad.uniquecarrier,
+air.name,
 sum(arrdelay) as delayed_minutes
 from
 delays ad 
 inner join airports src on ad.origin = src.iata_code_airport
 inner join airports dest on ad.dest = dest.iata_code_airport
+inner join airlines air on ad.uniquecarrier = air.iata_code_airline
 where year=1998 and month=10
-group by year, month, dest.country,dest.name,src.country,src.name,ad.uniquecarrier;
+group by year, month, dest.country,dest.name,src.country,src.name,air.name;
 
 -- Getting cities with more than 30 min. delay
 select 
