@@ -37,12 +37,3 @@ The following instructions are documented with DBeaver. For SquirrelSQL, the ste
 * select the Driver Class
 
 .. image:: _static/dbeaver_edit_Hive_selectDriverClass.png
-
-****************************************
-connection configuration for our cluster
-****************************************
-
-* create a new connection with your username and password
-
-.. image:: _static/dbeaver_new_connection.png
-When prompted to download additional packages, click "yes"

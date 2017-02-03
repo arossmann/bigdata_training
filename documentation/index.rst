@@ -19,7 +19,6 @@ This is a short documentation for the big data training. Here we'll walk through
    :maxdepth: 2
    
    sql_clients
-   loading_data
 
 
 Indices and tables
