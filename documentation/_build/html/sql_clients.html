@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Installation of SQL Clients &#8212; bigdata training[D[D[D[D[D[D[D[[3~_  documentation</title>
+    <title>Installation of SQL Clients &#8212; bigdata training  documentation</title>
     
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -47,12 +47,45 @@
 <h1>Installation of SQL Clients<a class="headerlink" href="#installation-of-sql-clients" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="downloads">
 <h2>Downloads<a class="headerlink" href="#downloads" title="Permalink to this headline">¶</a></h2>
+<p>Please download one of the following SQL clients:</p>
+<ul class="simple">
+<li><a class="reference external" href="http://squirrel-sql.sourceforge.net/">SQuirreL SQL Client</a>.</li>
+<li><a class="reference external" href="http://dbeaver.jkiss.org/download/">DBeaver</a>.</li>
+</ul>
 </div>
 <div class="section" id="adding-hive-library">
 <h2>Adding Hive library<a class="headerlink" href="#adding-hive-library" title="Permalink to this headline">¶</a></h2>
+<p>The following instructions are documented with DBeaver. For SquirrelSQL, the steps are similar.</p>
+<ul class="simple">
+<li>download the following jar file: <a class="reference external" href="http://repo.hortonworks.com/content/repositories/releases/org/apache/hive/hive-jdbc/1.2.1000.2.4.2.0-258/hive-jdbc-1.2.1000.2.4.2.0-258-standalone.jar">Hive JDBC Jar</a>.</li>
+<li>open DBeaver</li>
+<li>click on Database &gt; Driver manager</li>
+</ul>
+<img alt="_images/dbeaver_driver_manager.png" src="_images/dbeaver_driver_manager.png" />
+<ul class="simple">
+<li>Edit the &#8216;Apache Hive&#8217; driver</li>
+</ul>
+<img alt="_images/dbeaver_drivermanager_Hive.png" src="_images/dbeaver_drivermanager_Hive.png" />
+<ul class="simple">
+<li>click on org.apache.hive:hive-jdbc and then the &#8220;Download/Update&#8221; button</li>
+</ul>
+<img alt="_images/dbeaver_edit_Hive.png" src="_images/dbeaver_edit_Hive.png" />
+<ul class="simple">
+<li>Select the Version 1.1.0</li>
+</ul>
+<img alt="_images/dbeaver_edit_Hive_version.png" src="_images/dbeaver_edit_Hive_version.png" />
+<ul class="simple">
+<li>select the Driver Class</li>
+</ul>
+<img alt="_images/dbeaver_edit_Hive_selectDriverClass.png" src="_images/dbeaver_edit_Hive_selectDriverClass.png" />
 </div>
-<div class="section" id="configuration-for-example-cluster">
-<h2>configuration for example cluster<a class="headerlink" href="#configuration-for-example-cluster" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="connection-configuration-for-our-cluster">
+<h2>connection configuration for our cluster<a class="headerlink" href="#connection-configuration-for-our-cluster" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>create a new connection with your username and password</li>
+</ul>
+<img alt="_images/dbeaver_new_connection.png" src="_images/dbeaver_new_connection.png" />
+<p>When prompted to download additional packages, click &#8220;yes&#8221;</p>
 </div>
 </div>
 
@@ -67,7 +100,7 @@
 <li><a class="reference internal" href="#">Installation of SQL Clients</a><ul>
 <li><a class="reference internal" href="#downloads">Downloads</a></li>
 <li><a class="reference internal" href="#adding-hive-library">Adding Hive library</a></li>
-<li><a class="reference internal" href="#configuration-for-example-cluster">configuration for example cluster</a></li>
+<li><a class="reference internal" href="#connection-configuration-for-our-cluster">connection configuration for our cluster</a></li>
 </ul>
 </li>
 </ul>
