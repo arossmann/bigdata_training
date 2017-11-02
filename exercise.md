@@ -96,3 +96,11 @@ create table if not exists hvac_building
 as select h.*, b.country, b.hvacproduct, b.buildingage, b.buildingmgr 
 from buildings b join hvac_temperatures h on b.buildingid = h.buildingid;
 ```
+
+# Test Data
+The provided data are really small. Purpose is to give a quick introduction of the functionality. But having a Big Data training with 235kB ?
+We can generate more data with this simple script:
+```
+python generate_testdata.py > hvac_full.csv
+```
+Now upload this generated CSV file to the HVAC folder (second step)
