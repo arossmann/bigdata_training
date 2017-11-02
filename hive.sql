@@ -30,7 +30,7 @@ CREATE TABLE hvac STORED AS PARQUET AS SELECT * FROM hvac_raw;
 CREATE TABLE buildings STORED AS PARQUET AS SELECT * FROM building_raw;
 
  -- create optimized views
-CREATE TABLE hvac_temperatures as 
+CREATE VIEW hvac_temperatures as 
 select *, targettemp - actualtemp as temp_diff, 
 IF((targettemp - actualtemp) > 5, 'COLD', 
 IF((targettemp - actualtemp) < -5, 'HOT', 'NORMAL')) 
