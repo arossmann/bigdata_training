@@ -58,6 +58,23 @@ IF((targettemp - actualtemp) < -5, '1', 0))
 AS extremetemp from hvac;
 
 --
+-- Step 6 (Impala version):
+--
+create view hvac_temperature as 
+select *, targettemp - actualtemp as temp_diff, 
+case 
+    when (targettemp - actualtemp) > 5 then 'COLD'
+    when (targettemp - actualtemp) < -5 then 'HOT'
+    else 'NORMAL'
+end as temprange,
+case 
+    when (targettemp - actualtemp) > 5 then '1'
+    when (targettemp - actualtemp) < -5 then '1'
+    else '0'
+end as temp_extreme
+from hvac;
+
+--
 -- Step 7:
 -- create combined table
 --
