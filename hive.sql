@@ -60,7 +60,7 @@ AS extremetemp from hvac;
 --
 -- Step 6 (Impala version):
 --
-create view hvac_temperature as 
+create view hvac_temperatures as 
 select *, targettemp - actualtemp as temp_diff, 
 case 
     when (targettemp - actualtemp) > 5 then 'COLD'
